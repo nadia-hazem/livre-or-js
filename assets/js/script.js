@@ -3,40 +3,46 @@
 // Charger le DOM
 document.addEventListener("DOMContentLoaded", function () {
     
-    // Déclaration des variables register
+    // Déclaration des variables REGISTER
     const registerSubmit = document.querySelector("#registerSubmit");
     let registerForm = document.querySelector("#registerForm");
     let loginReg = registerForm.querySelector(".login");
     let passwordReg = registerForm.querySelector(".password");
     let password2 = registerForm.querySelector("#password2");
     let errorReg = registerForm.querySelector(".error");
-    
-    // Déclaration des variables login
+    let inscription = document.querySelector("#inscriptionDiv");
+    // Déclaration des variables LOGIN
     const loginSubmit = document.querySelector("#loginSubmit");
     let loginForm = document.querySelector("#loginForm");
     let loginLog = loginForm.querySelector(".login");
     let passwordLog = loginForm.querySelector(".password");
     let errorLog = loginForm.querySelector(".error");
+    let connexion = document.querySelector("#connexionDiv");
 
     let str = window.location.href;
     let url = new URL(str);
     let choice = url.searchParams.get("choice");
+
     let validate = false;
 
     // Afficher le formulaire de connexion
     function displayLoginForm () {
         // Masquer le formulaire d'inscription
-        registerForm.style.display = "none";
+        inscription.style.display = "none";
         // Afficher le formulaire de connexion
-        loginForm.style.display = "block";
+        connexion.style.display = "block";
+        //changer le titre
+        document.title = "Connexion";
     };
 
     // Afficher le formulaire d'inscription
     function displayRegisterForm () {
         // Masquer le formulaire de connexion
-        loginForm.style.display = "none";
+        connexion.style.display = "none";
         // Afficher le formulaire d'inscription
-        registerForm.style.display = "block";
+        inscription.style.display = "block";
+        //changer le titre
+        document.title = "Inscription";
     };
 
     // Afficher les formulaires alternativement d'après le clic sur le lien
@@ -198,6 +204,11 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.log(error));
         }
     });
+    // switchreg
+    switchReg.addEventListener("click", (e) => {
+        e.preventDefault();
+        displayRegisterForm();
+    });
 
     // LOGIN
     /////////
@@ -221,6 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.text())
             .then(data => {
                 data = data.trim();
+                console.log(data);
                 if(data === "Connexion réussie !") {
                     errorLog.style.color = "#00ff00";
                     errorLog.innerHTML = "Connexion réussie !";
@@ -236,6 +248,12 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch(error => console.log(error));
         }
+    });
+
+    // switchlog
+    switchLog.addEventListener("click", (e) => {
+        e.preventDefault();
+        displayLoginForm();
     });
 
 });

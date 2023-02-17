@@ -1,29 +1,71 @@
-/* .red {
-    background-color: #f44336;
+/* Style.css */
+.wrapper {
+    min-height: 100vh;
+    background:transparent;
+     /* Equal to height of footer */
+     /* But also accounting for potential margin-bottom of last child */
+    margin-bottom: -50px;
 }
-.green {
-    background-color: #4caf50;
+    .footer,
+    .push {
+    height: 50px;
+}
+body#index {
+    background: url(/livre-or-js/assets/img/bg1.png) no-repeat center center fixed;
+}
+body#livreor {
+    background: url(/livre-or-js/assets/img/bg2.png) no-repeat center center fixed;
+}
+body#contact {
+    background: url(/livre-or-js/assets/img/bg3.jpg) no-repeat center center fixed;
+}
+body#profil {
+    background: url(/livre-or-js/assets/img/bg1.png) no-repeat center center fixed;
+}
+header {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+    z-index: 1;
+}
+header button {
+    border: none;
+    cursor: pointer;
+    margin-top: 0;
+}
+.fas, .fab {
+    font-size: 32px;
+}
+/* img.favicon {
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
 } */
+.login {
+    float: left;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 20px;
+}
 li {
     list-style-type: none;
 }
 a {
     text-decoration: none;
 }
-nav ul li{
-    float:left; /*instead of 'display:inline-block;' to make hamburger easier*/
-    width: calc( (100vw - 40px ) / 6);/*3 = number of navitems you have*/
-    list-style-type: none;
-    
+nav {
+    width: 100%;
 }
 nav ul li a {
     display:block;
 }
-
-#loginForm, #registerForm {
-    display: none;
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 @media (max-width: 767px) {
     
     burgerButton {

@@ -1,5 +1,5 @@
-<!-- verification.php -->
 <?php
+// verification.php
 session_start();
 require_once 'assets/lib/User.php'; 
 $user = new User();
@@ -48,10 +48,10 @@ if (isset($_POST['deleteAccount'])) {
 
 // Afficher les commentaires
 if (isset($_POST['go']) && $_POST['go']=='Signer') {
-    $id = $_POST['id'];
-    var_dump($id);
+    /* $id = $_POST['id']; */
+    /* var_dump($id); */
     $comment = $_POST['comment'];
-    var_dump($comment);
-    $user->addComment($id, $comment);
+    /* var_dump($comment); */
+    $user->addComment($comment);
 }
 

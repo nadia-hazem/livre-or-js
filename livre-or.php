@@ -25,69 +25,74 @@ $pdo = $user->getBdd();
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="/livre-or-js/assets/img/favicon.png"/>    
     <!-- JS -->
-    <script src="/livre-or-js/assets/js/script.js"></script>
     <script src="/livre-or-js/assets/js/menu.js"></script>
     
 </head>
 
-<body>
+<body id="livreor">
     
     <?php include 'includes/header.php';?>
 
-    <main>
+    <div class="wrapper">
 
-        <div class="container">
+        <main>
 
-            <h1> Le livre d'Or </h1>
+            <div class="container">
 
-            <?php
-                
-            $request = "SELECT commentaires.commentaire, DATE_FORMAT(commentaires.date,'%d/%m/%Y') as date_fr, utilisateurs.login FROM commentaires INNER JOIN utilisateurs ON commentaires.id_utilisateur = utilisateurs.id";
-            $exec_request = $pdo->prepare($request);
-            $exec_request->execute();
-            $stmt = $exec_request->fetchAll(PDO::FETCH_ASSOC);
+                <h1> Le livre d'Or </h1>
 
-            if ($user->isConnected())
-            {
-            ?>  <a class="row" href="commentaire.php"><i class="fa-solid fa-2x fa-arrow-right-to-bracket"></i><h3 class="yellow">Laissez un commentaire</h3></a><br>
-            <?php
-            }
-            else {
-            ?>  <a class="row" href="user.php?choice=login"><i class="fa-solid fa-2x fa-arrow-right-to-bracket"></i> <h3 class="yellow">Connectez-vous pour laisser un commentaire</h3></a>
-            <?php
-            }
-            ?>
+                <?php
+                    
+                $request = "SELECT commentaires.commentaire, DATE_FORMAT(commentaires.date,'%d/%m/%Y') as date_fr, utilisateurs.login FROM commentaires INNER JOIN utilisateurs ON commentaires.id_utilisateur = utilisateurs.id";
+                $exec_request = $pdo->prepare($request);
+                $exec_request->execute();
+                $stmt = $exec_request->fetchAll(PDO::FETCH_ASSOC);
 
-        </div> <!-- /container -->
+                if ($user->isConnected())
+                {
+                ?>  <a class="row" href="commentaire.php"><i class="fa-solid fa-2x fa-arrow-right-to-bracket"></i><h3 class="yellow">Laissez un commentaire</h3></a><br>
+                <?php
+                }
+                else {
+                ?>  <a class="row" href="user.php?choice=login"><i class="fa-solid fa-2x fa-arrow-right-to-bracket"></i> <h3 class="yellow">Connectez-vous pour laisser un commentaire</h3></a>
+                <?php
+                }
+                ?>
 
-        <div class="container animright">
-            <table width="100%"> 
-                <thead>
-                    <tr class="row coms">
-                        <th class="thcom1"><h3>date</h3></th>
-                        <th class="thcom2"><h3>login</h3></th>
-                        <th class="thcom3"><h3>commentaire</h3></th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php foreach ($stmt as $row) { ?>
+            </div> <!-- /container -->
+
+            <div class="container animright">
+                <table width="100%"> 
+                    <thead>
                         <tr class="row coms">
-                            <td class="tdcom1"><div class="com"><em><?php echo $row['date_fr']; ?></em></div></td>
-                            <td class="tdcom2"><div class="com"><?php echo $row['login']; ?></div></td>
-                            <td class="tdcom3 wrap"><div class="com"><?php echo $row['commentaire']; ?></div></td>
-                    </tr>
-                    <?php } ?>
-                </tbody>           
-            </table>
-            <a href="#main"><i class="fa-solid fa-4x fa-circle-arrow-up"></i></a>
-            
-        </div> <!-- /container -->
+                            <th class="thcom1"><h3>date</h3></th>
+                            <th class="thcom2"><h3>login</h3></th>
+                            <th class="thcom3"><h3>commentaire</h3></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($stmt as $row) { ?>
+                            <tr class="row coms">
+                                <td class="tdcom1"><div class="com"><em><?php echo $row['date_fr']; ?></em></div></td>
+                                <td class="tdcom2"><div class="com"><?php echo $row['login']; ?></div></td>
+                                <td class="tdcom3 wrap"><div class="com"><?php echo $row['commentaire']; ?></div></td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>           
+                </table>
+                <a href="#main"><i class="fa-solid fa-4x fa-circle-arrow-up"></i></a>
+                
+            </div> <!-- /container -->
 
-        <?php        
-            $bdd = null; // on ferme la connexion à MySQL  
-        ?>  
+            <?php        
+                $bdd = null; // on ferme la connexion à MySQL  
+            ?>  
 
-    </main> <!-- /main -->
+        </main> <!-- /main -->
+
+        <div class="push"></div> <!-- /push -->
+
+    </div> <!-- /wrapper -->
 
     <?php include 'includes/footer.php';?>
 

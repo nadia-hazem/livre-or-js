@@ -7,7 +7,7 @@ $user = new User();
 
 <header>
 
-    <nav class="close grid light text-center" id="nav">
+    <nav class="close" id="nav">
 
         <!-- Burger menu -->
         <burgerButton class="open" onclick="burgerSwitch(this.parentNode);">
@@ -22,58 +22,49 @@ $user = new User();
             }
         }
         else if ($user->isConnected()) {
-            $login = $user->getLogin();
+            
         ?>
+        <!-- afficher le login de l'utilisateur -->
+        <div class="login">
+            <?php $login = $user->getLogin(); ?>
+        </div>
 
         <!-- afficher les liens menus correspondants à la session -->
-        <ul>
-            <li class="btn btn-light"><a href="index.php"><i class="fas fa-lg fa-home"></i>ACCUEIL</a></li>
+        <ul class="list-inline">
 
-            <li class="btn btn-light"><a href="profil.php"><i class="fas fa-lg fa-user"></i>PROFIL</a></li> 
+            <li id="accueil" class="btn btn-dark"><a class="text-white" href="index.php">Accueil</a></li>
 
-            <li class="btn btn-light"><a href="livre-or.php"><i class="fas fa-lg fa-book"></i>LIVRE D'OR</a></li>
+            <li id="profil" class="btn btn-dark"><a class="text-white" href="profil.php"></i>PROFIL</a></li> 
 
-            <li class="btn btn-light"><a href="index.php?deconnexion=true"><i class="fa-solid fa-lg fa-plug"></i>DECONNEXION</a></li>
+            <li id="livre" class="btn btn-dark"><a class="text-white" href="livre-or.php">LIVRE D'OR</a></li>
 
-            <li class="btn btn-light"><a href="mailto:nadia.hazem@laplateforme.io"><i class="fa-solid fa-lg fa-envelope"></i> CONTACT</a></li>
+            <li id="deconnexion" class="btn btn-dark"><a class="text-white" href="index.php?deconnexion=true">DECONNEXION</a></li>
+
+            <li id="contact" class="btn btn-dark"><a class="text-white" href="mailto:nadia.hazem@laplateforme.io"><i class="fas fa-lg fa-envelope"></i> </a></li>
+
         </ul>
 
         <?php
             } else { 
         ?>
+        <!-- afficher les liens menus correspondants à l'absence de session -->
+        <ul class="list-inline">
 
-        <ul>
-            <li class="btn btn-light"><a href="index.php"><i class="fa-solid fa-lg fa-home"></i>ACCUEIL</a></li>
+            <li id="accueil" class="btn btn-dark"><a class="text-white" href="index.php">Accueil</a></li>
 
-            <li class="btn btn-light"><a href="livre-or.php"><i class="fa-solid fa-lg fa-book"></i>LIVRE D'OR</a></li>
+            <li id="livre" class="btn btn-dark"><a class="text-white" href="livre-or.php">LIVRE D'OR</a></li>
 
-            <li class="btn btn-light"><a href="mailto:nadia.hazem@laplateforme.io"><i class="fa-solid fa-lg fa-envelope"></i> CONTACT</a></li>
+            <li id="connexion" class="btn btn-dark"><a class="text-white" id="loginBtn" href="/livre-or-js/user.php?choice=login">CONNEXION</button></a></li>
+            
+            <li id="inscription" class="btn btn-dark"><a class="text-white" id="registerBtn" href="/livre-or-js/user.php?choice=register">INSCRIPTION</a></li>
 
-            <li class="btn btn-light"><a href="/livre-or-js/user.php?choice=login"><button  id="loginBtn">CONNEXION</button></a></li>
-
-            <li class="btn btn-light"><a href="/livre-or-js/user.php?choice=register"><button  id="registerBtn">INSCRIPTION</button></a></li>
+            <li id="contact" class="btn btn-dark"><a class="text-white" href="mailto:nadia.hazem@laplateforme.io"><i class="fas fa-lg fa-envelope"></i> </a></li>
         </ul>
 
         <?php
             }   
         ?>
-        
-        <div class="social g-col-4"> <!-- Section Social media -->
-    
-            <!-- Linkedin -->
-            <a class="btn btn-floating align-middle" href="https://www.linkedin.com/in/pictelle/" target="_blank" role="button" title="Mon LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    
-                <!-- Github -->
-            <a class="btn btn-floating align-middle" href="https://github.com/nadia-hazem" target="_blank" role="button" title="Mon GitHub"><i class="fab fa-github"></i></a>
-    
-            <!-- Wordpress -->
-            <a class="btn btn-floating align-middle" href="https://pictelle.com" target="_blank" role="button"><i class="fab fa-wordpress" title="Mon WordPress"></i></a>
-    
-            <!-- Resume -->
-            <a class="btn btn-floating align-middle" href="https://nadia-hazem.students-laplateforme.io/" target="_blank" role="button" title="CV/Resume"><i class="fas fa-file"></i></a>
-    
-        </div>
-        
+
     </nav>
     
 

@@ -79,7 +79,7 @@
             ));
             // récupération des résultats
             $result = $select->fetch(PDO::FETCH_ASSOC);
-            // verif password
+            // verification password 
             if (password_verify($password, $result['password'])) {
                 $_SESSION['user']= [
                     'id' => $result['id'],
@@ -299,24 +299,20 @@
         }
         
         // Récupérer les commentaires
-        public function addComment ($id )
+        public function addComment ( )
         {    
-            $id = $_SESSION['user']['id'];
+            $id = $this->id;
             
             if ((!empty($_POST['commentaire']))) {
                 $commentaire = htmlspecialchars($_POST['commentaire']);
-                $date = date("Y/m/d");
     
                 // on prepare notre requête d'insertion des données
-                $request = "INSERT INTO commentaires (commentaire, id_utilisateur, date ) VALUES(:commentaire, :id, :date)";
+                $request = "INSERT INTO commentaires (commentaire, id_utilisateur, date ) VALUES(:commentaire, :id, NOW())";
                 $insert = $this->bdd->prepare($request);
                 $insert->execute(array(
                     ':commentaire' => $commentaire,
                     ':id' => $id,
-                    ':date' => $date
                 ));
-                // on exécute la requête
-                $insert->execute();
                 // on affiche un message de confirmation
                 echo "Commentaire ajouté !";
                 // on redirige vers la page d'accueil

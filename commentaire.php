@@ -24,7 +24,6 @@ $pdo = $user->getBdd();
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="/livre-or-js/assets/img/favicon.png"/>    
     <!-- JS -->
-    <script src="/livre-or-js/assets/js/script.js"></script>
     <script src="/livre-or-js/assets/js/menu.js"></script>
     
 </head>
@@ -33,21 +32,27 @@ $pdo = $user->getBdd();
     
     <?php include 'includes/header.php';?>
 
-    <main>
-        <div class="container">
-            
-            <h2 class="animtop">Laissez un commentaire</h2>
+    <div class="wrapper">
+        
+        <main>
+            <div class="container">
 
-            <form action="verification.php" method="post">
+                <h2 class="animtop">Laissez un commentaire</h2>
 
-                <textarea name="commentaire" cols="50" rows="10" placeholder="Merci d'avoir testé ce module !
-                                                                                Votre commentaire :"></textarea>
-                <input type="submit" name="go" value="Signer">
+                <form action="verification.php" method="post">
 
-            </form>
+                    <textarea name="commentaire" cols="50" rows="10" placeholder="Merci d'avoir testé ce module !
+                                                                                    Votre commentaire :"></textarea>
+                    <input type="submit" name="go" value="Signer">
 
-        </div> <!-- /content -->
-    </main> <!-- /main -->
+                </form>
+
+            </div> <!-- /content -->
+        </main> <!-- /main -->
+
+        <div class="push"></div>
+
+    </div> <!-- /wrapper -->
 
     <?php include 'includes/footer.php';?>
 

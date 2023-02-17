@@ -30,32 +30,36 @@ $pdo = $user->getBdd();
     <link rel="shortcut icon" type="image/png" href="/livre-or-js/assets/img/favicon.png"/>    
 
     <!-- JS -->
-    <script src="/livre-or-js/assets/js/script.js"></script>
     <script src="/livre-or-js/assets/js/menu.js"></script>
 
 </head>
 
-<body>
+<body id="index">
     
     <?php include 'includes/header.php';?>
 
-    <main>
+    <div class="wrapper">
 
-        <div class="container">
+        <main>
 
-            <div class="">
+            <div class="container">
 
-                <h1> Le livre d'Or </h1>
-                    <h2>Accueil</h2>
+                <div class="">
+
+                    <h1> Le livre d'Or </h1>
+                        <h2>Accueil</h2>
 
 
 
-            </div>
+                </div>
 
-        </div> <!-- /container -->
+            </div> <!-- /container -->
 
-    </main>
+        </main>
 
+        <div class="push"></div>
+
+    </div> <!-- /wrapper -->
     <?php include 'includes/footer.php';?>
 
 </body>
