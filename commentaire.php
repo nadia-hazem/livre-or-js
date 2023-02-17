@@ -35,12 +35,15 @@ $pdo = $user->getBdd();
 
     <main>
         <div class="container">
+            
             <h2 class="animtop">Laissez un commentaire</h2>
 
-            <form action="" method="post">
+            <form action="verification.php" method="post">
+
                 <textarea name="commentaire" cols="50" rows="10" placeholder="Merci d'avoir testé ce module !
                                                                                 Votre commentaire :"></textarea>
                 <input type="submit" name="go" value="Signer">
+
             </form>
 
         </div> <!-- /content -->

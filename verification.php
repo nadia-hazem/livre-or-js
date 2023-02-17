@@ -1,9 +1,9 @@
 <!-- verification.php -->
 <?php
 session_start();
-
 require_once 'assets/lib/User.php'; 
 $user = new User();
+$pdo = $user->getBdd();
 
 // test disponibilité du login
 if (isset($_POST['verifLogin'])) {
@@ -45,3 +45,13 @@ if (isset($_POST['deleteAccount'])) {
     $password = $_POST['password'];
     $user->delete($password);
 }
+
+// Afficher les commentaires
+if (isset($_POST['go']) && $_POST['go']=='Signer') {
+    $id = $_POST['id'];
+    var_dump($id);
+    $comment = $_POST['comment'];
+    var_dump($comment);
+    $user->addComment($id, $comment);
+}
+

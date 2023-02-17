@@ -27,8 +27,6 @@ $user = new User();
 
         <!-- afficher les liens menus correspondants à la session -->
         <ul>
-            <?php echo "Bonjour $login &nbsp;"; // connecté ?> &nbsp;   
-
             <li class="btn btn-light"><a href="index.php"><i class="fas fa-lg fa-home"></i>ACCUEIL</a></li>
 
             <li class="btn btn-light"><a href="profil.php"><i class="fas fa-lg fa-user"></i>PROFIL</a></li> 
