@@ -1,4 +1,5 @@
 <?php
+// Path: verification.php
 // verification.php
 session_start();
 require_once 'assets/lib/User.php'; 

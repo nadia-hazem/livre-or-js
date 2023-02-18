@@ -1,5 +1,5 @@
-<!-- livre-or.php -->
 <?php
+// Path: livre-or.php
 require_once 'assets/lib/User.php';
 $user = new User();
 $pdo = $user->getBdd();

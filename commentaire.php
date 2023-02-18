@@ -1,4 +1,5 @@
 <?php
+// Path: commentaire.php
 require_once 'assets/lib/User.php';
 $user = new User();
 $pdo = $user->getBdd();

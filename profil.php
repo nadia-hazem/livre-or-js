@@ -1,5 +1,4 @@
-<!-- profil.php -->
-
+<!-- path: profil.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

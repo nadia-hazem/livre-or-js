@@ -1,5 +1,5 @@
-<!-- index.php -->
 <?php
+// Path: index.php
 require_once 'assets/lib/User.php';
 $user = new User();
 $pdo = $user->getBdd();
@@ -30,6 +30,8 @@ $pdo = $user->getBdd();
     <link rel="shortcut icon" type="image/png" href="/livre-or-js/assets/img/favicon.png"/>    
 
     <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
     <script src="/livre-or-js/assets/js/menu.js"></script>
 
 </head>
@@ -44,15 +46,6 @@ $pdo = $user->getBdd();
 
             <div class="container">
 
-                <div class="">
-
-                    <h1> Le livre d'Or </h1>
-                        <h2>Accueil</h2>
-
-
-
-                </div>
-
             </div> <!-- /container -->
 
         </main>
@@ -60,6 +53,7 @@ $pdo = $user->getBdd();
         <div class="push"></div>
 
     </div> <!-- /wrapper -->
+    
     <?php include 'includes/footer.php';?>
 
 </body>
