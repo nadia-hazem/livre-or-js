@@ -16,4 +16,4 @@ Now that the database is ready, you will need to create different pages:
 - A page containing a registration form and a registration form.
 connection. Connection and registration must be done asynchronously with JavaScript. Validation of forms must be done without page reloading (Existing user, unconfirmed password, etc.).
 
-![Screenshot](main/screenshot.png)
+![Screenshot](https://github.com/nadia-hazem/livre-or-js/blob/ad5ced5c7d42ee4dd0b2742229eecff7081d3735/screenshot.png)
