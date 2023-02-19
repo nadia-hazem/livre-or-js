@@ -14,18 +14,21 @@
     <script src="https://kit.fontawesome.com/a05ac89949.js" crossorigin="anonymous"></script>
     
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        
     <!-- CSS -->
     <link rel="stylesheet" href="/livre-or-js/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>    
     
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="/livre-or-js/assets/img/favicon.png"/>    
     
     <!-- JS -->
-    <script src="/livre-or-js/assets/js/profil.js"></script>
-    <script src="/livre-or-js/assets/js/menu.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+    <script src="/livre-or-js/assets/js/script.js"></script>
+    <script src="/livre-or-js/assets/js/menu.js" defer></script>
     
 </head>
 
@@ -47,63 +50,75 @@
         <main>
             <div class="container">
 
-                <h1 class="">Mon Profil</h1>
+                <h2 class="playfair animate__animated animate__flipInX">Mon Profil</h2>
+                <br>
+                <div class="row align-content-center">
 
-                <div class="">
-                    <form action="" id="profilForm" method="post">
-                        <div class="">
+                    <form action="" class="col md-6 m-3 p-3 bg-white bg-opacity-75" id="profilForm" method="post">
 
-                            <h3 class="">Modifier mon login</h3>
-
-                            <i class="fa fa-user-lock fa-2x fa-hover-hidden"></i>
-                            <i class="fa fa-user fa-2x fa-hover-show"></i>
+                        <div class="d-flex justify-content-between">
+                            <h3 class="">Modifier mon login</h3><i class="fa fa-user-lock fa-2x"></i>
                         </div>
                         <br>
-                        <label>Login</label>
-                        <input type="text" id="loginProfil" value="<?=$login?>" name="login" required>
+                        <div class="d-flex justify-content-between">
+                            <label>Login</label>
+                            <input type="text" id="loginProfil" value="<?=$login?>" name="login" required>
+                        </div>
                         <p></p>
-                        <label>Mot de passe</label>
-                        <input type="password" id="passwordProfil" placeholder="Saisissez mot de passe" name="password" required>
+                        <div class="d-flex justify-content-between">
+                            <label>Mot de passe</label>
+                            <input type="password" id="passwordProfil" placeholder="Saisissez mot de passe" name="password" required>
+                        </div>
                         <p></p>
-                        <input type="submit" id="loginProfilSubmit" name='submit' value="Valider" >
+
+                        <input type="submit" id="loginProfilSubmit" name='submit' class="btn btn-secondary" value="Valider" >
                         <p></p>
                         <!-- Supprimer compte -->
-                        <input type="submit" id="deleteBtn" name="delete" value="Supprimer mon compte" />
+                        <input type="submit" id="deleteBtn" name="delete"  class="btn btn-warning" value="Supprimer mon compte" />
                         <p></p>
                     </form>
 
-                    <form action="" id="passwordForm" method="post">
-                        <div class="row">
+                    <form action="" class="col md-6 m-3 p-3 bg-white bg-opacity-75" id="passwordForm" method="post">
 
-                            <h3 class="form_title center">Changer de mot de passe</h3>
-                            
-                            <i class="fa fa-lock fa-2x fa-hover-hidden"></i>
-                            <i class="fa fa-lock-open fa-2x fa-hover-show"></i>
+                        <div class="d-flex justify-content-between">
+                            <h3 class="form_title center">Changer de mot de passe</h3><i class="fa fa-lock fa-2x"></i>
                         </div>
-                        <label>Ancien mot de passe</label>
-                        <input type="password" id="oldPassword" placeholder="Saisissez ancien mot de passe" name="oldpassword" required>
+
+                        <div class="d-flex justify-content-between">
+                            <label>Ancien mot de passe</label>
+                            <input type="password" id="oldPassword" placeholder="Saisissez ancien mot de passe" name="oldpassword" required>
+                        </div>
                         <p></p>
-                        <label>Nouveau mot de passe</label>
-                        <input type="password" id="newPassword" placeholder="Saisissez nouveau mot de passe" name="newPassword" required>
+                        <div class="d-flex justify-content-between">
+                            <label>Nouveau mot de passe</label>
+                            <input type="password" id="newPassword" placeholder="Saisissez nouveau mot de passe" name="newPassword" required>
+                        </div>
                         <p></p>
                         <br />
-                        <label>Confirmez le mot de passe</label>
-                        <input type="password" id="newPasswordConfirm" name="newPasswordConfirm">
+                        <div class="d-flex justify-content-between">
+                            <label>Confirmez le mot de passe</label>
+                            <input type="password" id="newPasswordConfirm" name="newPasswordConfirm">
+                        </div>
                         <p></p>
 
-                        <input type="submit" id='passwordSubmit' value="Valider" >
+                        <input type="submit" id='passwordSubmit' class="btn btn-secondary" value="Valider" >
                         <p></p>
                     </form>
 
                 </div> <!-- end row wrap -->
+
             </div> <!-- end content -->
+
         </main> <!--end main-->
 
         <div class="push"></div>
 
     </div> <!-- end wrapper -->
+    
 
     <?php include 'includes/footer.php';?>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
 </body>
 </html>

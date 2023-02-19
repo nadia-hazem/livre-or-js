@@ -1,4 +1,9 @@
 /* Style.css */
+
+/* import font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+/* maintient le footer en bas de page */
 .wrapper {
     min-height: 100vh;
     background:transparent;
@@ -6,40 +11,158 @@
      /* But also accounting for potential margin-bottom of last child */
     margin-bottom: -50px;
     margin-top: 3rem;
-}
-
+} /* grace au push*/
 .footer,
 .push {
     height: 50px;
 }
-
+.hover:hover {
+    transition: all 0.3s ease-in-out;
+    opacity: 0.8;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f1f1;
+}
 body#index {
-    background: url(/livre-or-js/assets/img/guestbook.jpg) no-repeat center center fixed;
+    background: url(/livre-or-js/assets/img/bg2.jpg) no-repeat center center fixed;
+    transition: all 0.5s ease-in-out;
 }
 body#livreor {
-    background: url(/livre-or-js/assets/img/bg3.jpg) no-repeat center center fixed;
-}
-body#contact {
-    background: url(/livre-or-js/assets/img/bg3.jpg) no-repeat center center fixed;
+    background: url(/livre-or-js/assets/img/bg2.jpg) no-repeat center center fixed;
+    transition: all 0.5s ease-in-out;
 }
 body#profil {
     background: url(/livre-or-js/assets/img/bg3.jpg) no-repeat center center fixed;
+    transition: all 0.5s ease-in-out;
 }
-
+body#user {
+    background: url(/livre-or-js/assets/img/bg3.jpg) no-repeat center center fixed;
+    transition: all 0.5s ease-in-out;
+}
+body#commentaire {
+    background: url(/livre-or-js/assets/img/bg4.png) no-repeat center center fixed;
+    transition: all 0.5s ease-in-out;
+}
+.accueil {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 4rem;
+    rotate: 30deg;
+}
+main {
+    margin-top: 3rem;
+}
+h1 {
+    font-size: 4rem!important;
+    font-weight: 800;
+}
+.playfair {
+    font-family: 'Playfair Display', serif;
+}
+.roboto {
+    font-family: 'Roboto', sans-serif;
+}
+.or {
+    color: #d2b069;
+}
+bg-or {
+    background: #d2b069;
+}
+.bg-grey {
+    background: #999999;
+}
+.thanks {
+    position: absolute;
+    rotate: 15deg;
+    width: 200px;
+    top: 20%;
+    right: 15%;
+    margin: 2rem auto;
+    z-index: 1;
+}
 .fas, .fab {
     font-size: 32px;
 }
-
+.fa-user-lock {
+    color: #999999;
+    float: right;
+}
+.fa-lock {
+    color: #999999;
+    float: right;
+}
 li {
     list-style-type: none;
 }
-
 a {
-    text-decoration: none;
+    /* text-decoration: none; */
+    color: #d2b069;
+    font-weight:800;
 }
-
+form {
+    margin: 0 auto;
+    width: 40%;
+    border: 1px solid #ccc;
+    padding: 3rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+nav { z-index:999;}
 nav ul li a {
     display:block;
+}
+
+/***  TABLES  ***/
+table {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 75%!important;
+    height: 60%;
+    overflow: scroll;
+    margin: auto;
+}
+
+th {
+    line-height: 2; 
+    font-weight: bold; 
+    text-align: center;
+    text-transform: capitalize;
+}
+
+tr, th {padding: 10px 20px;}
+
+/*** tables commentaires***/
+.com {
+    text-align: left;
+    min-height: 40px;
+    padding: 0 10px;
+}
+
+.coms {
+    width: 75%;
+    text-align: left;
+    border-radius: 5px;
+    color: #333;
+    margin: 2rem auto;
+}
+
+.tdcom1, .thcom1 {
+    width: 20%;
+    text-align: left;
+}
+
+.tdcom2, .thcom2 {
+    width: 30%;
+    text-align: left;
+    padding: 0;
+}
+
+.tdcom3, .thcom3 {
+    width: 50%;
+    text-align: left;
+    padding: 0;
 }
 
 footer {
@@ -51,6 +174,28 @@ footer {
     align-items: center;
 }
 
+/* Meddias queries */
+
+@media (max-width: 1024px) {
+    .thanks { 
+        display: none;
+    }
+    .thcom1 h3, .thcom2 h3, .thcom3 h3 {
+        font-size: 20px;
+    }
+    table {
+        background-color: rgba(255, 255, 255, 0.9);
+        width: 100%!important;
+        height: 60%;
+        margin: auto;
+    }
+    form {
+        width: 100%;
+    }
+    textarea {
+        width: 100%;
+    }
+}
 @media (max-width: 767px) {
     
     burgerButton {
@@ -81,7 +226,23 @@ footer {
     nav.close ul { 
     display: none; 
     }
-    /* nav ul li { 
-    width: calc(100vw - 40px);
-    } */
+    nav.open ul {
+        display: flex;
+        flex-direction: column;
+    }
+    nav.open ul li {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+    }
+    nav.open ul li:hover {
+        background-color: #cccccc;
+    }
+    .tdcom1 {
+        font-size: 12px;
+        line-height: 25px;
+    }
+
 }

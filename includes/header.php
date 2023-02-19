@@ -5,7 +5,7 @@ require_once 'assets/lib/User.php';
 $user = new User();
 ?>
 
-<header class="bg-secondary">
+<header class="bg-grey">
 
     <nav class="close" id="nav">
 
@@ -29,9 +29,9 @@ $user = new User();
         <ul class="nav nav-pills nav-fill">
 
             <!-- afficher le login de l'utilisateur -->
-            <li class="nav-item"><?php $login = $user->getLogin(); ?></li>
+            <li class="nav-item pt-2"><mark><?php $login = $user->getLogin(); ?></mark></li>
 
-            <li id="accueil" class="nav-item"><a class="nav-link text-white" href="index.php">Accueil</a></li>
+            <li id="accueil" class="nav-item"><a class="nav-link text-white" href="index.php">ACCUEIL</a></li>
 
             <li id="profil" class="nav-item"><a class="nav-link text-white" href="profil.php"></i>PROFIL</a></li> 
 
@@ -50,7 +50,7 @@ $user = new User();
         <!-- afficher les liens menus correspondants à l'absence de session -->
         <ul class="nav nav-pills nav-fill">
 
-            <li id="accueil" class="nav-item"><a class="nav-link text-white" href="index.php">Accueil</a></li>
+            <li id="accueil" class="nav-item"><a class="nav-link text-white" href="index.php">ACCUEIL</a></li>
 
             <li id="livre" class="nav-item"><a class="nav-link text-white" href="livre-or.php">LIVRE D'OR</a></li>
 

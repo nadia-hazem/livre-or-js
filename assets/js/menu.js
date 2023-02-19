@@ -1,31 +1,21 @@
+// fonction pour changer le style du bouton burger
+function burgerSwitch(nav) {
+    if (nav.className == "open") {
+        nav.className = "close";
+    } else {
+        nav.className = "open";
+    }
+
+}
+
+// Chargement du DOM
 document.addEventListener("DOMContentLoaded", function () {
 
     let title = document.title;
     let switchLog = document.querySelector("#switchLog");
     let switchReg = document.querySelector("#switchReg");
 
-    // fonction pour changer le style du bouton burger
-    function burgerSwitch(nav) {
-        if (nav.className == "open") {
-            nav.className = "close";
-        } else {
-            nav.className = "open";
-        }
-    }
-    // 
-    if(window.innerWidth < 768) {
-        let nav = document.querySelector("nav");
-        let burger = document.querySelector("burgerButton");
-        burger.addEventListener("click", function () {
-            burgerSwitch(nav);
-            let ul = document.querySelector("ul");
-            ul.style.flexDirection = "column";
-        });
-    }
-
-
-    
-    
+    // Fonction pour highlighter l'onglet actif
     function onglet() {
         if (title == "Accueil") {
             let li = document.querySelector("#accueil");
@@ -44,9 +34,10 @@ document.addEventListener("DOMContentLoaded", function () {
             li.style.backgroundColor = "#282828";
         } 
     }
-
     onglet();
     
+    // boutons de switch secondaires
+
     switchLog.addEventListener("click", function () {
         title = "Connexion";
         let li = document.querySelector("#inscription");
@@ -58,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         title = "Inscription";
         let li = document.querySelector("#connexion");
             li.style.backgroundColor = "initial";
+
         onglet();
     });
 

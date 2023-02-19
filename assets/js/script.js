@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     errorLog.innerHTML = "Connexion réussie !";
                     setTimeout(() => {
                         window.location.href = "profil.php";
-                    }, 2000);
+                    }, 1000);
                 } else {
                     passwordLog.style.borderColor = "#ff0000";
                     passwordLog.nextElementSibling.style.color = "#ff0000";
