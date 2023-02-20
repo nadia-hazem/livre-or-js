@@ -52,7 +52,7 @@ $pdo = $user->getBdd();
 
                 <form action="verification.php" method="post" class="m-auto">
 
-                    <textarea name="commentaire" cols="50" rows="10" placeholder="Votre commentaire :"></textarea>
+                    <textarea name="commentaire" cols="40" rows="10" placeholder="Votre commentaire :"></textarea>
                     <input type="submit" class="btn btn-secondary" name="go" value="Signer">
 
                 </form>
