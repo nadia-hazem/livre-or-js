@@ -1,4 +1,4 @@
-# livre-or-js
+# Livre d'or js/php
 ## Guestbook with js and php
 --
 Guestbook allowing your users to leave their opinions on your site. This project is carried out using classes in particular to represent users.
