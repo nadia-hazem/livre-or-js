@@ -12,6 +12,8 @@ function burgerSwitch(nav) {
 document.addEventListener("DOMContentLoaded", function () {
 
     let title = document.title;
+    let switchLog = document.querySelector("#switchLog");
+    let switchReg = document.querySelector("#switchReg");
 
     // Fonction pour highlighter l'onglet actif
     function onglet() {
@@ -34,6 +36,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     onglet();
     
+    // boutons de switch secondaires
 
+    switchLog.addEventListener("click", function () {
+        title = "Connexion";
+        let li = document.querySelector("#inscription");
+            li.style.backgroundColor = "initial";
+        onglet();
+    });
+    
+    switchReg.addEventListener("click", function () {
+        title = "Inscription";
+        let li = document.querySelector("#connexion");
+            li.style.backgroundColor = "initial";
+
+        onglet();
+    });
 
 });
