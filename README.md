@@ -1,7 +1,7 @@
 # Livre d'or js/php
 ## Guestbook with js and php
 
-![link](https://nadia-hazem.students-laplateforme.io/livre-or-js/index.php) to the project
+### Visit <a href="https://nadia-hazem.students-laplateforme.io/livre-or-js/index.php" target="_blank">the project</a>
 
 
 Guestbook allowing your users to leave their opinions on your site. This project is carried out using classes in particular to represent users.
@@ -24,7 +24,7 @@ And the different pages:
 Validation of forms must be done without page reloading (Existing user, unconfirmed password, etc.).
 
 <p align="center">
-  ![Screenshot](https://github.com/nadia-hazem/livre-or-js/blob/ad5ced5c7d42ee4dd0b2742229eecff7081d3735/screenshot.png)
+  <img src="https://github.com/nadia-hazem/livre-or-js/blob/ad5ced5c7d42ee4dd0b2742229eecff7081d3735/screenshot.png">
 </p>
 
 - connect/disconnect asynchrone
