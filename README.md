@@ -25,3 +25,27 @@ Validation of forms must be done without page reloading (Existing user, unconfir
 
 
 ![Screenshot](https://github.com/nadia-hazem/livre-or-js/blob/ad5ced5c7d42ee4dd0b2742229eecff7081d3735/screenshot.png)
+
+- connect/disconnect asynchrone
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/nadia-hazem/livre-or-js/blob/ed41075c12b9375c65a13d069e1986afd64e028e/assets/img/readme2.png">
+    </td>
+    <td>
+      <img src="https://github.com/nadia-hazem/livre-or-js/blob/ed41075c12b9375c65a13d069e1986afd64e028e/assets/img/readme3.png">
+    </td>
+  </tr>
+</table>
+
+- GuestBook and user account
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/nadia-hazem/livre-or-js/blob/ed41075c12b9375c65a13d069e1986afd64e028e/assets/img/readme4.png">
+    </td>
+    <td>
+      <img src="https://github.com/nadia-hazem/livre-or-js/blob/ed41075c12b9375c65a13d069e1986afd64e028e/assets/img/readme5.png">
+    </td>
+  </tr>
+</table>
