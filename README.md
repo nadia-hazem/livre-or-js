@@ -1,7 +1,7 @@
 # Livre d'or js/php
 ## Guestbook with js and php
 
-### Visit <a href="https://nadia-hazem.students-laplateforme.io/livre-or-js/index.php" target="_blank">the project</a>
+### <a href="https://nadia-hazem.students-laplateforme.io/livre-or-js/index.php" target="_blank"DEMO</a>
 
 
 Guestbook allowing your users to leave their opinions on your site. This project is carried out using classes in particular to represent users.
