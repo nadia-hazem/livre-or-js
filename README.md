@@ -20,8 +20,8 @@ A “comments” table which contains the following fields:
 And the different pages:
 
 - A home page that presents the site (index.php)
-- A page containing a registration form and a login form. Connection and registration must be done asynchronously with JavaScript.
-Validation of forms must be done without page reloading (Existing user, unconfirmed password, etc.).
+- A page containing a registration form and a login form. Connection and registration are done asynchronously with JavaScript.
+- Validation of forms is done without page reloading (Existing user, unconfirmed password, etc.).
 
 <p align="center">
   <img src="https://github.com/nadia-hazem/livre-or-js/blob/ad5ced5c7d42ee4dd0b2742229eecff7081d3735/screenshot.png">
