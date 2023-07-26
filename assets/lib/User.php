@@ -11,9 +11,9 @@
         // Méthodes  
         public function __construct() { 
             $host = 'localhost';
-            $dbname = 'livreor';
-            $dbuser = 'root';
-            $dbpass = '';
+            $dbname = 'fqdbhzuh_livreor';
+            $dbuser = 'fqdbhzuh_n0NAq79EJ';
+            $dbpass = 'tNvTEkztxMnhMWtURtBHPvB5EHROYGBf';
 
             /* $this->bdd = new PDO('mysql:host=localhost; dbname=classes; charset=utf8', 'root', ''); */
             try {
@@ -327,3 +327,5 @@
         }            
         
     } // fin de la classe
+
+?>

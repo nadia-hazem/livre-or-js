@@ -1,8 +1,8 @@
 <?php 
 session_start();
 
-require_once 'assets/lib/User.php'; 
-$user = new User();
+require_once 'assets/lib/User.php';
+$user = new User($db);
 ?>
 
 <header class="bg-grey">
