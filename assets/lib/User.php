@@ -14,6 +14,7 @@
             $dbname = 'livreor';
             $dbuser = 'root';
             $dbpass = '';
+
             /* $this->bdd = new PDO('mysql:host=localhost; dbname=classes; charset=utf8', 'root', ''); */
             try {
                 $this->bdd = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $dbuser, $dbpass);
