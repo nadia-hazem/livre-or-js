@@ -1,5 +1,6 @@
 <?php
 // Path: assets\lib\User.php
+
     class User
     {
         // attributs

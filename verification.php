@@ -22,8 +22,8 @@ if (isset($_POST['verifLogin'])) {
 if (isset($_POST['register'])) {
     $login = $_POST['login'];
     $password = $_POST['password'];
-    $msg = $user->register($login, $password); // renvoie un message au JS
-    echo $msg; // juste renvoyer le message pour le JS
+    $msg = $user->register($login, $password); // returns a message to JS
+    echo $msg; // just return the message for JS
     exit();
 }
 
@@ -31,8 +31,8 @@ if (isset($_POST['register'])) {
 if (isset($_POST['connect'])) {
     $login = $_POST['login'];
     $password = $_POST['password'];
-    $msg = $user->connect($login, $password); // renvoie un message au JS
-    echo $msg; // juste renvoyer le message pour le JS
+    $msg = $user->connect($login, $password); // returns a message to JS
+    echo $msg; // just return the message for JS
     exit();
 }
 
