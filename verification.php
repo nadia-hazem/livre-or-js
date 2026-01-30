@@ -1,29 +1,39 @@
-<?php
-// Path: verification.php
-// verification.php
+<?php // Path: verification.php
+
 session_start();
-require_once 'assets/lib/User.php'; 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require_once 'assets/lib/User.php';
 $user = new User();
 $pdo = $user->getBdd();
 
 // test disponibilité du login
 if (isset($_POST['verifLogin'])) {
     $login = $_POST['verifLogin'];
-    $user->isUserExist($login);
+    $stmt = $pdo->prepare("SELECT id FROM utilisateurs WHERE login = :login");
+    $stmt->execute([':login' => $login]);
+    echo $stmt->fetch() ? "indispo" : "dispo";
+    exit;
 }
 
 // inscription
 if (isset($_POST['register'])) {
     $login = $_POST['login'];
     $password = $_POST['password'];
-    $user->register($login, $password);
+    $msg = $user->register($login, $password); // renvoie un message au JS
+    echo $msg; // juste renvoyer le message pour le JS
+    exit();
 }
 
-// connexion
+// connection
 if (isset($_POST['connect'])) {
     $login = $_POST['login'];
     $password = $_POST['password'];
-    $user->connect($login, $password);
+    $msg = $user->connect($login, $password); // renvoie un message au JS
+    echo $msg; // juste renvoyer le message pour le JS
+    exit();
 }
 
 // change login
@@ -47,7 +57,7 @@ if (isset($_POST['deleteAccount'])) {
     $user->delete($password);
 }
 
-// Afficher les commentaires
+// Display comments
 if (isset($_POST['go']) && $_POST['go']=='Signer') {
     /* $id = $_POST['id']; */
     /* var_dump($id); */

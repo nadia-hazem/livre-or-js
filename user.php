@@ -1,46 +1,21 @@
-<?php
-// Path: user.php
+<?php // Path: user.php
+
 require_once 'assets/lib/User.php';
+
+session_start();
 $user = new User();
 $pdo = $user->getBdd();
+
+// Check connection & display user info
+if ($user->isConnected()) {
+    echo '<p class="log">Vous êtes connecté en tant que : <strong>' . htmlspecialchars($_SESSION['user']['login']) . '</strong></p>';
+} else {
+    echo '<p class="log">Vous n’êtes pas connecté.</p>';
+}
+
+$bodyId = "user";
+include "includes/header.php";
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/a05ac89949.js" crossorigin="anonymous"></script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-        
-    <!-- CSS -->
-    <link rel="stylesheet" href="/livre-or-js/assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>    
-    
-    <!-- favicon -->
-    <link rel="shortcut icon" type="image/png" href="/livre-or-js/assets/img/favicon.png"/>    
-    
-    <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-
-    <script src="/livre-or-js/assets/js/script.js"></script>
-    <script src="/livre-or-js/assets/js/menu_user.js" defer></script>
-    
-</head>
-
-<body id="user">
-
-    <?php include 'includes/header.php'; ?>
 
     <div class="wrapper">
 
@@ -50,7 +25,9 @@ $pdo = $user->getBdd();
                 
                 <div id="connexionDiv" class="animate__animated animate__zoomIn">
                     
-                    <!-- login -->
+                    <!----------------------
+                        login 
+                    ----------------------->
                     <form id="loginForm" class="bg-white bg-opacity-75" action="verification.php" method="post"> <!-- redirection vers la page de vérification -->
                     
                     <h3 class="playfair">Connectez-vous pour accéder à votre profil</h3>
@@ -66,16 +43,18 @@ $pdo = $user->getBdd();
                         <p class="error"></p>
 
                         Vous n'avez pas de compte ? &nbsp;<a href id="switchReg">Inscription</a>
-                    </form> <!-- fin du formulaire -->
+                    </form> <!-- form end -->
                     
                 </div>
 
                 
                 <div id="inscriptionDiv" class="animate__animated animate__zoomIn">
                     
-                    <!-- register -->
-                    <form id="registerForm"  class="bg-white bg-opacity-75" action="verification.php">
-                        
+                    <!-------------------
+                        register
+                    -------------------->
+                    <form id="registerForm" class="bg-white bg-opacity-75" action="verification.php" method="post">
+
                         <h3 class="playfair">Inscrivez-vous pour laisser un commentaire</h3>
                         <h1 class="text-center">Inscription</h1>
 
@@ -93,7 +72,7 @@ $pdo = $user->getBdd();
 
                         Déjà inscrit ? &nbsp;<a href id="switchLog">Connexion</a>
 
-                    </form> <!-- fin du formulaire -->
+                    </form> <!-- form end -->
                 </div>
             
             </div>
@@ -107,11 +86,7 @@ $pdo = $user->getBdd();
 
     <?php include 'includes/footer.php';?>
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
-</body>
-</html>
+    <script src="/assets/js/script.js"></script>
 
 
 

@@ -1,39 +1,44 @@
-// fonction pour changer le style du bouton burger
+// path : assets/js/menu.js
+
 function burgerSwitch(nav) {
     if (nav.className == "open") {
         nav.className = "close";
     } else {
         nav.className = "open";
     }
-
 }
 
-// Chargement du DOM
 document.addEventListener("DOMContentLoaded", function () {
 
-    let title = document.title;
+  // ==========================
+  // ACTIVE MENU BY URL
+  // ==========================
+    const path = window.location.pathname.split("/").pop(); 
+    // ex: "index.php", "guestbook.php", "profil.php", ""
 
-    // Fonction pour highlighter l'onglet actif
-    function onglet() {
-        if (title == "Accueil") {
-            let li = document.querySelector("#accueil");
-            li.style.backgroundColor = "#282828";
-        } else if (title == "Livre d'or") {
-            let li = document.querySelector("#livre");
-            li.style.backgroundColor = "#282828";
-        } else if (title == "Profil") {
-            let li = document.querySelector("#profil");
-            li.style.backgroundColor = "#282828";
-        } else if (title == "Connexion") {
-            let li = document.querySelector("#connexion");
-            li.style.backgroundColor = "#282828";
-        } else if (title == "Inscription") {
-            let li = document.querySelector("#inscription");
-            li.style.backgroundColor = "#282828";
-        } 
+    const routes = {
+        "": "accueil",             // if URL = / (racine)
+        "index.php": "accueil",
+        "guestbook.php": "guestbook",
+        "profil.php": "profil",
+        "user.php": null,          // special case (login/register)
+    };
+
+    // reset active state
+    document.querySelectorAll("nav li").forEach(li => {
+        li.classList.remove("active");
+        li.style.backgroundColor = "";
+    });
+
+  // detect current menu item
+    const currentId = routes[path] ?? null;
+
+    if (currentId) {
+        const li = document.querySelector("#" + currentId);
+        if (li) {
+        li.classList.add("active");
+        li.style.backgroundColor = "#282828";
+        }
     }
-    onglet();
-    
-
 
 });

@@ -1,46 +1,21 @@
-<!-- path: profil.php -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil</title>
+<?php // Path: profil.php
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/a05ac89949.js" crossorigin="anonymous"></script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-        
-    <!-- CSS -->
-    <link rel="stylesheet" href="/livre-or-js/assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>    
-    
-    <!-- favicon -->
-    <link rel="shortcut icon" type="image/png" href="/livre-or-js/assets/img/favicon.png"/>    
-    
-    <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+require_once 'assets/lib/User.php';
 
-    <script src="/livre-or-js/assets/js/script.js"></script>
-    <script src="/livre-or-js/assets/js/menu.js" defer></script>
-    
-</head>
+session_start();
+$user = new User();
+$pdo = $user->getBdd();
 
-<body id="profil">
+$bodyId = "profil";
+include "includes/header.php";
+?>
 
-    <?php include 'includes/header.php';?>
     <?php
-    if (!$user->isConnected()) { // si la session n'est pas ouverte (protection de barre d'adresse)
-        header('Location: user.php'); // redirection vers la page de connexion
+    if (!$user->isConnected()) { // if the session is not open (address bar protection)
+        header('Location: user.php'); // redirect to connection page
     }
     ?>
-    <?php // variables des informations de l'utilisateur
+    <?php // User info variables
         $login = $_SESSION['user']['login']; 
     ?>
 
@@ -73,7 +48,7 @@
 
                         <input type="submit" id="loginProfilSubmit" name='submit' class="btn btn-secondary" value="Valider" >
                         <p></p>
-                        <!-- Supprimer compte -->
+                        <!-- Delete account -->
                         <input type="submit" id="deleteBtn" name="delete"  class="btn btn-warning" value="Supprimer mon compte" />
                         <p></p>
                     </form>
@@ -117,8 +92,3 @@
     
 
     <?php include 'includes/footer.php';?>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
-</body>
-</html>

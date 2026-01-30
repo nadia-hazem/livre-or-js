@@ -1,16 +1,16 @@
-// Script pour la page profil.php
+// Path: assets/js/profil.js
 
-// Charger le DOM
+// Waiting for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Déclaration des variables login
+    // Login variables
     let profilForm = document.querySelector("#profilForm");
     let loginProfil = profilForm.querySelector("#loginProfil");
     let passwordProfil = profilForm.querySelector("#passwordProfil");
     let loginSubmit = profilForm.querySelector("#loginSubmit");
     let oldLogin = loginProfil.value;
 
-    // Déclaration des variables password
+    // Password variables
     let passwordForm = document.querySelector("#passwordForm");
     let oldPassword = passwordForm.querySelector("#oldPassword");
     let newPassword = passwordForm.querySelector("#newPassword");
@@ -19,14 +19,14 @@ document.addEventListener("DOMContentLoaded", function () {
     
     let validate = false;
     
-    // vérif login
+    // Login verification
     function checkLoginProfil() {
         if(loginProfil.value === "") {
-            // Changer la couleur du message d'erreur
+            // Change the color of the error message
             loginProfil.nextElementSibling.style.color = "#ff0000";
-            // Colorer le champ de saisie jusqu'à ce qu'il soit correctement rempli
+            // Color the input field until it is correctly filled
             loginProfil.style.borderColor = "#ff0000";
-            // Afficher le message d'erreur
+            // Display the error message
             loginProfil.nextElementSibling.innerHTML = "Veuillez saisir un login";
             validate = false;
         }else if(loginProfil.value === oldLogin) {
@@ -61,14 +61,14 @@ document.addEventListener("DOMContentLoaded", function () {
         return validate;
     };
 
-    // vérif password
+    // Password verification
     function checkPassword(pass) {
         if(pass.value === "") {
-            // Changer la couleur du message d'erreur
+            // Change the color of the error message
             pass.nextElementSibling.style.color = "#ff0000";
-            // Colorer le champ de saisie jusqu'à ce qu'il soit correctement rempli
+            // Color the input field until it is correctly filled
             pass.style.borderColor = "#ff0000";
-            // Afficher le message d'erreur
+            // Display the error message
             pass.nextElementSibling.innerHTML = "Veuillez saisir un mot de passe";
             validate = false;
         } else {
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    // vérif passwordConfirm
+    // New password confirmation verification
     function newCheckPassword() {
         if(newPasswordConfirm.value === "") {
             newPasswordConfirm.nextElementSibling.style.color = "#ff0000";
@@ -119,12 +119,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    ////////////////////////////////////////////////////////
-    // Ajouter un écouteur d'événements clic pour chaque bouton
-    ////////////////////////////////////////////////////////
+    /////////////////////
+    // Event listeners //
+    /////////////////////
 
-    // formulaire modifier login
-    ////////////////////////////
+    // Change login form
+    /////////////////////
+
     // login
     loginProfil.addEventListener("blur", checkLoginProfil);
 
@@ -137,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if(validate) {
             let data = new FormData(profilForm);
             data.append("changeLogin", "envoi");
-            fetch("/livre-or-js/verification.php", {
+            fetch("/verification.php", {
                 method: "POST",
                 body: data
             })
@@ -161,8 +162,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // formulaire modifier password
-    ///////////////////////////////
+    // Change password form
+    ////////////////////////
 
     // password
     oldPassword.addEventListener("blur", function(e) { checkPassword(oldPassword)});
@@ -173,12 +174,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // newPasswordConfirm
     newPasswordConfirm.addEventListener("keyup", newCheckPassword);
 
-    // Ajouter un écouteur d'évènement pour le Delete du compte
+    // delete account button event listener
     deleteBtn.addEventListener("click", function(e) {
         e.preventDefault();
         let data = new FormData(profilForm);
         data.append("deleteAccount", "envoi");
-        fetch("/livre-or-js/verification.php", {
+        fetch("/verification.php", {
             method: "POST",
             body: data
         })
@@ -207,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if(validate) {
             let data = new FormData(passwordForm);
             data.append("changePassword", "envoi");
-            fetch("/livre-or-js/verification.php", {
+            fetch("/verification.php", {
                 method: "POST",
                 body: data
             })
