@@ -9,7 +9,7 @@ require_once 'assets/lib/User.php';
 $user = new User();
 $pdo = $user->getBdd();
 
-// test disponibilité du login
+// Check login availability
 if (isset($_POST['verifLogin'])) {
     $login = $_POST['verifLogin'];
     $stmt = $pdo->prepare("SELECT id FROM utilisateurs WHERE login = :login");
@@ -59,10 +59,7 @@ if (isset($_POST['deleteAccount'])) {
 
 // Display comments
 if (isset($_POST['go']) && $_POST['go']=='Signer') {
-    /* $id = $_POST['id']; */
-    /* var_dump($id); */
     $comment = $_POST['comment'];
-    /* var_dump($comment); */
     $user->addComment($comment);
 }
 
