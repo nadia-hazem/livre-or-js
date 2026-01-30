@@ -11,7 +11,7 @@
         // Méthodes  
         public function __construct() { 
             $host = 'localhost';
-            $dbname = 'livreor';
+            $dbname = 'guestbook';
             $dbuser = 'root';
             $dbpass = '';
 
